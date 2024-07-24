@@ -2,6 +2,7 @@ declare global {
   namespace NodeJS {
     interface ProcessEnv {
       NEXT_PUBLIC_SAMSUNG_API_URL: string;
+      NEXT_PUBLIC_SAMSUNG_BASE_URL: string;
     }
   }
 }

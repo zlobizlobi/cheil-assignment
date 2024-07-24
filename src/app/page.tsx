@@ -1,9 +1,11 @@
 "use client";
 
+import { Card } from "@/components/Card";
+import { Product } from "@/types";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -26,9 +28,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full h-screen overflow-scroll p-10 grid grid-cols-6">
+    <main className="w-full h-screen overflow-scroll p-10 grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-4">
       {products.map((product) => (
-        <div key={product.familyId} className="shadow-sm p-5 rounded-sm"></div>
+        <Card
+          key={product.familyId}
+          chipOptions={product.chipOptions}
+          title={product.fmyMarketingName}
+          models={product.modelList}
+        />
       ))}
     </main>
   );
