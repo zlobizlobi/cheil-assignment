@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -14,23 +12,16 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Notes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Since some time ago I've moved back to writing plain, pre-ES6 function declarations as I think that they simplify reading the code:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+function doSomething(){
+    return 'Im doing something'
+}
+```
 
-## Learn More
+Keep it simple, but this is an opinion of course. I'm well aware on how to write arrow functions and adhere to ES6. If the project would require this - that wouldn't be a problem.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Yet, I think a lot of time and effort is wasted on trying to write code so to only stick to the given conventions of the programming language. To give an example: writing a simple `.forEach` loop with a `let array = [];` in stead of complicating the mind of a fellow developer with a `.reduce` function, where one needs to remind himself of the `acc`, `i` etc. I mean, everyone can go to MDN and remind themselves of the latter, yet why do so, if you can achieve the same result with a much easier to read syntax. But again, this is personal preference :). My mind is open for any approach.
