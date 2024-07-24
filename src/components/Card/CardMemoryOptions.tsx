@@ -17,7 +17,7 @@ export function CardMemoryOptions({
         const id = `${option.optionName}-${crypto.randomUUID()}`;
 
         return (
-          <span className="relative box-border">
+          <span className="relative box-border" key={id}>
             <input
               type="radio"
               id={id}

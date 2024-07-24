@@ -17,7 +17,7 @@ export function CardColorOptions({
         const id = `${option.optionName}-${crypto.randomUUID()}`;
 
         return (
-          <span className="relative">
+          <span className="relative" key={id}>
             <input
               type="radio"
               id={id}
