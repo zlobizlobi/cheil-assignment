@@ -1,5 +1,6 @@
 import { ChipType, Option, Product } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { ChevronLeftIcon } from "../ChevronLeftIcon";
@@ -100,14 +101,18 @@ export function Card({ chipOptions, title, models }: CardProps) {
       >
         <ChevronLeftIcon />
       </button>
-      {currentModel?.galleryImage && (
-        <Image
-          width={400}
-          height={400}
-          alt={currentModel?.galleryImageAlt[imageIndex] || ""}
-          src={`https:${currentModel?.galleryImage[imageIndex]}`}
-        />
-      )}
+      <Link
+        href={`${process.env.NEXT_PUBLIC_SAMSUNG_BASE_URL}${currentModel?.originPdpUrl}`}
+      >
+        {currentModel?.galleryImage && (
+          <Image
+            width={400}
+            height={400}
+            alt={currentModel?.galleryImageAlt[imageIndex] || ""}
+            src={`https:${currentModel?.galleryImage[imageIndex]}`}
+          />
+        )}
+      </Link>
       <button
         className={twMerge(
           "shadow-md opacity-0 bg-slate-200 absolute -right-3 top-1/2 -translate-y-1/2  h-6 w-6 rounded-full flex justify-center items-center transition-opacity",
