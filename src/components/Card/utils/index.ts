@@ -1,0 +1,1 @@
+export { formatColorOptionName } from "./formatColorOptionName";

@@ -8,7 +8,9 @@ export interface Option {
 
 export enum ChipType {
   COLOR = "COLOR",
-  MOBILE_MEMORY = "MOBILE_MEMORY",
+  MOBILE_MEMORY = "MOBILE MEMORY",
+  PC_STORAGE = "PC STORAGE",
+  TV_SIZE = "TV SIZE",
 }
 
 export interface ChipOption {
@@ -25,7 +27,7 @@ export interface FmyChip {
   multiColorList: boolean | null;
 }
 
-interface Model {
+export interface Model {
   configuratorUrl: string;
   fmyChipList: FmyChip[];
   galleryImage: string[];
